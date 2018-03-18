@@ -1,0 +1,14 @@
+**/node_modules
+/bower_components
+/web
+/themes
+/jet-on-node/public
+
+/hybrid/node_modules
+/hybrid/platforms
+/hybrid/www/*
+
+!hybrid/plugins
+hybrid/plugins/*
+!hybrid/plugins/fetch.json
+

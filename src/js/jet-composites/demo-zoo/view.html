@@ -1,0 +1,13 @@
+<h3 data-bind="text : $props.zooName"></h3>
+<table>
+    <thead>
+        <tr><th>Animal</th><th>Exhibit</th></tr>
+    </thead>
+    <tbody data-bind="foreach: $props.animals">
+        <tr>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: exhibit"></td>
+        </tr>
+    </tbody>
+</table>
+

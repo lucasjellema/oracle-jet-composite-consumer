@@ -1,0 +1,9 @@
+{
+  "runtime":{
+    "majorVersion":"8"
+  },
+  "command": "npm start",
+  "release": {},
+  "notes": "Some Application that Consumes JET Composite Components"
+}
+

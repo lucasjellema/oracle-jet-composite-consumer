@@ -1,0 +1,10 @@
+<body class="demo-disable-bg-image">
+    <h1>Country Browser</h1>
+    <p>Click on World icon to open a popup with the currently selected country highlight. Select a country and click or press Save to confirm the selection - and the corresponding Wikipedia article is shown </p>
+      <div>
+          <input-country country-name="{{country}}" country-selection-handler={{handleCountrySelection}} />
+      </div>
+      <h2 data-bind="text: upperCountry"></h2>
+      <iframe id="countryIframe" data-bind="attr: {src:  'https://en.wikipedia.org/wiki/'+country()}" style="overflow-y : hidden ; height : 600px ; width :  100% ;border-width:0;" scrolling="yes" /></div>
+  
+  </body>

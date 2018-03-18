@@ -1,14 +1,14 @@
 [
     {
         "name": "demo-zoo",
-        "branch": "master",
-        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom"},
+        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom", "branch": "master"
+        },
         "phase": "design",
-        "documentation":"http://andrejusb.blogspot.nl/2018/02/oracle-jet-composite-components-manual.html"
+        "documentation":"http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=arrays"
     }
-,    {
+    ,    {
         "name": "input-country",
-        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom"},
+        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom", "Xcommit": "50cb1b08491bafaf30627ea6aca661bff783e360"},
         "phase": "deploy"
     }
 ]
