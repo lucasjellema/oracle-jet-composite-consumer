@@ -8,7 +8,9 @@
     }
     ,    {
         "name": "input-country",
-        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom", "Xcommit": "50cb1b08491bafaf30627ea6aca661bff783e360"},
+        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom"},
         "phase": "deploy"
     }
 ]
+
+    

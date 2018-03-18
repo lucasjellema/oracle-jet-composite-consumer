@@ -129,9 +129,6 @@ async function installComposite(composite) {
        }).catch((error) => {console.log("ERROR XXX"+error)})
   }//processGithubDirectory
   
-    
-  
-
 function reportFile(item, target) {
     console.log(`- installed ${item.name} (${item.size} bytes )in ${target}`)
 }
