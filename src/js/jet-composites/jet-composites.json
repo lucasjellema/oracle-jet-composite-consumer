@@ -7,6 +7,13 @@
         "documentation":"http://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=arrays"
     }
     ,    {
+        "name": "cards",
+        "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom", "branch": "master", "componentPath":"src/js/jet-composites/demo-card"
+        },
+        "phase": "design",
+        "documentation":"https://www.oracle.com/webfolder/technetwork/jet/jetCookbook.html?component=composite&demo=basic"
+    }
+    ,    {
         "name": "input-country",
         "github": {"owner": "lucasjellema", "repo": "jet-composite-component-showroom"},
         "phase": "deploy"

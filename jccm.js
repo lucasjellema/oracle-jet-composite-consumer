@@ -107,9 +107,10 @@ async function install() {
 async function installComposite(composite,targetProjectDirectory) {
     var repo = composite.github.repo;
     var nameComposite = composite.name
-    var path = nameComposite
+    var path = composite.github.componentPath? composite.github.componentPath:"src/js/jet-composites/"+nameComposite
     var owner = composite.github.owner
-
+console.log(JSON.stringify(composite));
+console.log("Component path: "+composite.componentPath)
     // TODO:
     // - present a pretty report of what was created/updated
     // - print instructions on including composite component in the application
@@ -119,13 +120,12 @@ async function installComposite(composite,targetProjectDirectory) {
     var ref = composite.github.commit ? composite.github.commit : (composite.github.tag ? composite.github.tag : (composite.github.branch ? composite.github.branch : 'master'))
 
     console.log(`Installing Composite ${composite.name} 
-    from ${sourceProjectRoot + compositesDirectory + path} on ${ref} in ${composite.github.owner}\\${composite.github.repo} 
+    from ${ path} on ${ref} in ${composite.github.owner}\\${composite.github.repo} 
     into ${targetProjectDirectory + targetDirectory + compositesDirectory}`
     )
-
+    // the assumption is that the JET WebComponent is located in the path /js/jet-composites/<name of component>  
     processGithubDirectory(owner, repo, ref
-        , sourceProjectRoot + compositesDirectory + path
-        , sourceProjectRoot + compositesDirectory
+        ,  path
         , targetProjectDirectory )
 }
 
@@ -134,8 +134,8 @@ const binaryExtensions = ['png', 'jpg', 'tiff', 'wav', 'mp3', 'doc', 'pdf']
 var maxSize = 1000000;
 
 // (recursively) download contents of directory path from GitHub owner/repo into targetRoot  
-function processGithubDirectory(owner, repo, ref, path, sourceRoot, targetRoot) {
-    console.log(`##### processGithubDirectory  path: ${path} , sourceRoot ${sourceRoot}
+function processGithubDirectory(owner, repo, ref, path, targetRoot) {
+    console.log(`##### processGithubDirectory  path: ${path} 
     , targetRoot ${targetRoot}`)
     octokit.repos.getContent({ "owner": owner, "repo": repo, "path": path, "ref": ref })
         .then(result => {
@@ -144,7 +144,7 @@ function processGithubDirectory(owner, repo, ref, path, sourceRoot, targetRoot) 
             checkDirectorySync(targetDir)
             result.data.forEach(item => {
                 if (item.type == "dir") {
-                    processGithubDirectory(owner, repo, ref, item.path, sourceRoot, targetRoot)
+                    processGithubDirectory(owner, repo, ref, item.path, targetRoot)
                 } // if directory
                 if (item.type == "file") {
                     var target = `${targetRoot + targetDirectory + item.path.substr(4)}`
